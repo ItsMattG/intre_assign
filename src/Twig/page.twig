@@ -1,0 +1,36 @@
+<main class="container" id="app">
+	<h2>Book Catalogue</h2>
+
+	<div class="rating-filter">
+		<label for="ratingFilter">Filter by Rating:</label>
+		<select id="ratingFilter" v-model="rating.selected">
+			<option value="All">All</option>
+			<option v-for="rating in rating.ratings" :key="rating" :value="rating">{{ rating }}</option>
+		</select>
+	</div>
+
+		<table class="table table--bordered">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th class="mobile-hidden">Author</th>
+					<th class="mobile-hidden">Category</th>
+					<th>Year</th>
+					<th class="mobile-hidden">Rating</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="(book, index) in sortedBooks" :key="index" :class="{ 'highlight': book.year > 1950 }">
+					<td>{{ book.title }}</td>
+					<td class="mobile-hidden">{{ book.author }}</td>
+					<td class="mobile-hidden">{{ book.category }}</td>
+					<td>{{ book.year }}</td>
+					<td class="mobile-hidden">{{ book.rating }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div v-else>
+		<div>Loading...</div>
+	</div>
+</main>
