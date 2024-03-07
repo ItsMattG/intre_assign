@@ -2,7 +2,7 @@
 
 ## api/database_connection.php
 - The api/database_connection.php file hosts the connectToSupabase() function for connecting to the Supabase database.
-- Within the function, predefined connection parameters like username, password, host, port, and database name are initialized.
+- Within the function, predefined connection parameters like username, password, host, port, and database name are initialised.
 - Using pg_connect(), the function establishes the database connection and handles errors gracefully, ensuring reliable connectivity.
 
 ## api/insert_books.php
